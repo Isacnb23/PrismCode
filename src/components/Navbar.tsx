@@ -12,7 +12,6 @@ function Navbar() {
     setIsMenuOpen(false)
   }
 
-  // Smooth scroll integrado
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const href = e.currentTarget.getAttribute('href')
     
@@ -32,15 +31,14 @@ function Navbar() {
         })
       }
     }
-  }  // ⬅️ FALTABA ESTA LLAVE
+  }
 
   return (
     <>
-      {/* Navbar Flotante */}
       <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-6xl">
         <div className="bg-black/80 backdrop-blur-md rounded-2xl border border-gray-800 px-6 py-4 shadow-2xl">
           <div className="flex justify-between items-center">
-            {/* Logo */}
+            
             <a href="#hero" onClick={handleNavClick} className="flex items-center gap-3 group">
               <img 
                 src={logo} 
@@ -53,7 +51,6 @@ function Navbar() {
               </div>
             </a>
 
-            {/* Desktop Links */}
             <div className="hidden md:flex space-x-8">
               <a href="#servicios" onClick={handleNavClick} className="text-gray-300 hover:text-emerald-400 transition-colors font-medium">
                 Servicios
@@ -69,7 +66,6 @@ function Navbar() {
               </a>
             </div>
 
-            {/* CTA Button Desktop */}
             <a 
               href="#contacto" 
               onClick={handleNavClick}
@@ -78,7 +74,6 @@ function Navbar() {
               Hablemos
             </a>
 
-            {/* Hamburger Button Mobile */}
             <button
               onClick={toggleMenu}
               className="md:hidden relative w-10 h-10 flex items-center justify-center text-white focus:outline-none"
@@ -106,7 +101,6 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <div 
         className={`fixed inset-0 bg-black/95 backdrop-blur-lg z-40 md:hidden transition-all duration-300 ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -117,59 +111,28 @@ function Navbar() {
             isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
           }`}
         >
-          {/* Mobile Links */}
-          <a 
-            href="#servicios" 
-            onClick={handleNavClick}
-            className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
-          >
+          <a href="#servicios" onClick={handleNavClick} className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors">
             Servicios
           </a>
-          <a 
-            href="#proyectos" 
-            onClick={handleNavClick}
-            className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
-          >
+          <a href="#proyectos" onClick={handleNavClick} className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors">
             Proyectos
           </a>
-          <a 
-            href="#nosotros" 
-            onClick={handleNavClick}
-            className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
-          >
+          <a href="#nosotros" onClick={handleNavClick} className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors">
             Nosotros
           </a>
-          <a 
-            href="#contacto" 
-            onClick={handleNavClick}
-            className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
-          >
+          <a href="#contacto" onClick={handleNavClick} className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors">
             Contacto
           </a>
 
-          {/* CTA Mobile */}
-          <a 
-            href="#contacto" 
-            onClick={handleNavClick}
-            className="mt-8 bg-emerald-500 text-black px-10 py-4 rounded-xl font-bold text-xl hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/30"
-          >
+          <a href="#contacto" onClick={handleNavClick} className="mt-8 bg-emerald-500 text-black px-10 py-4 rounded-xl font-bold text-xl hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/30">
             Hablemos
           </a>
 
-          {/* Social Links Mobile */}
           <div className="flex gap-6 mt-8">
-            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors text-2xl">
-              📷
-            </a>
-            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors text-2xl">
-              𝕏
-            </a>
-            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors text-2xl">
-              💼
-            </a>
-            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors text-2xl">
-              🐙
-            </a>
+            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors text-2xl">📷</a>
+            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors text-2xl">𝕏</a>
+            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors text-2xl">💼</a>
+            <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors text-2xl">🐙</a>
           </div>
         </div>
       </div>
