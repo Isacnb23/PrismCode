@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import logo from '../assets/logo.png'
+import { LanguageSwitcher } from './LanguageSwitcher'
+import { useTranslation } from 'react-i18next'  // ⬅️ AGREGAR
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useTranslation()  // ⬅️ AGREGAR
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -53,26 +56,30 @@ function Navbar() {
 
             <div className="hidden md:flex space-x-8">
               <a href="#servicios" onClick={handleNavClick} className="text-gray-300 hover:text-emerald-400 transition-colors font-medium">
-                Servicios
+                {t('nav.services')}  {/* ⬅️ CAMBIAR */}
               </a>
               <a href="#proyectos" onClick={handleNavClick} className="text-gray-300 hover:text-emerald-400 transition-colors font-medium">
-                Proyectos
+                {t('nav.projects')}  {/* ⬅️ CAMBIAR */}
               </a>
               <a href="#nosotros" onClick={handleNavClick} className="text-gray-300 hover:text-emerald-400 transition-colors font-medium">
-                Nosotros
+                {t('nav.about')}  {/* ⬅️ CAMBIAR */}
               </a>
               <a href="#contacto" onClick={handleNavClick} className="text-gray-300 hover:text-emerald-400 transition-colors font-medium">
-                Contacto
+                {t('nav.contact')}  {/* ⬅️ CAMBIAR */}
               </a>
             </div>
 
-            <a 
-              href="#contacto" 
-              onClick={handleNavClick}
-              className="hidden md:block bg-emerald-500 text-black px-6 py-2 rounded-lg hover:bg-emerald-400 transition-all font-bold shadow-lg shadow-emerald-500/30"
-            >
-              Hablemos
-            </a>
+            <div className="hidden md:flex items-center gap-4">  {/* ⬅️ AGREGAR DIV */}
+              <LanguageSwitcher />  {/* ⬅️ AGREGAR */}
+              
+              <a 
+                href="#contacto" 
+                onClick={handleNavClick}
+                className="bg-emerald-500 text-black px-6 py-2 rounded-lg hover:bg-emerald-400 transition-all font-bold shadow-lg shadow-emerald-500/30"
+              >
+                {t('nav.cta')}  {/* ⬅️ CAMBIAR */}
+              </a>
+            </div>
 
             <button
               onClick={toggleMenu}
@@ -111,21 +118,26 @@ function Navbar() {
             isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
           }`}
         >
+          {/* Language Switcher Mobile */}
+          <div className="absolute top-8">  {/* ⬅️ AGREGAR */}
+            <LanguageSwitcher />
+          </div>
+
           <a href="#servicios" onClick={handleNavClick} className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors">
-            Servicios
+            {t('nav.services')}  {/* ⬅️ CAMBIAR */}
           </a>
           <a href="#proyectos" onClick={handleNavClick} className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors">
-            Proyectos
+            {t('nav.projects')}  {/* ⬅️ CAMBIAR */}
           </a>
           <a href="#nosotros" onClick={handleNavClick} className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors">
-            Nosotros
+            {t('nav.about')}  {/* ⬅️ CAMBIAR */}
           </a>
           <a href="#contacto" onClick={handleNavClick} className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors">
-            Contacto
+            {t('nav.contact')}  {/* ⬅️ CAMBIAR */}
           </a>
 
           <a href="#contacto" onClick={handleNavClick} className="mt-8 bg-emerald-500 text-black px-10 py-4 rounded-xl font-bold text-xl hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/30">
-            Hablemos
+            {t('nav.cta')}  {/* ⬅️ CAMBIAR */}
           </a>
 
           <div className="flex gap-6 mt-8">

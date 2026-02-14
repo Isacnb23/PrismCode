@@ -41,7 +41,7 @@ function Process() {
   ]
 
   return (
-    <section id="proceso" className="py-20 relative overflow-hidden bg-gray-900/30">
+    <section id="proceso" className="py-20 relative overflow-hidden ">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div 
@@ -129,7 +129,7 @@ function Process() {
         </div>
 
         {/* CTA */}
-        <ScrollReveal delay={0.6}>
+        {/* <ScrollReveal delay={0.6}>
           <div className="text-center mt-16">
             <p className="text-gray-400 mb-6">¿Listo para comenzar?</p>
             <a 
@@ -139,7 +139,7 @@ function Process() {
               Iniciar Proyecto
             </a>
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
 
       </div>
     </section>

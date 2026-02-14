@@ -51,7 +51,7 @@ function WhyUs() {
   ]
 
   return (
-    <section id="porque-prismcode" className="py-20 relative overflow-hidden bg-gray-900/30">
+    <section id="porque-prismcode" className="py-20 relative overflow-hidden ">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div 
@@ -172,7 +172,7 @@ function WhyUs() {
           ))}
         </div>
 
-        {/* CTA Section */}
+        {/* CTA Section
         <ScrollReveal delay={0.4}>
           <div className="mt-16 text-center bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-2xl p-12 border border-emerald-500/30">
             <h3 className="text-3xl font-bold text-white mb-4">
@@ -196,7 +196,7 @@ function WhyUs() {
               </a>
             </div>
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
 
       </div>
     </section>
