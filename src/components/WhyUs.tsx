@@ -1,57 +1,21 @@
 import { ScrollReveal } from './ScrollReveal'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 function WhyUs() {
+  const { t } = useTranslation()
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const reasons = [
-    {
-      number: '01',
-      title: 'Sin Límites Tecnológicos',
-      description: 'No estamos casados con un stack específico. Si tu proyecto necesita una tecnología en particular, la aprendemos y la implementamos. Tu visión define las herramientas, no al revés.',
-      icon: '🎯',
-      color: 'emerald'
-    },
-    {
-      number: '02',
-      title: 'Comunicación Transparente',
-      description: 'Actualizaciones constantes, sin sorpresas. Trabajamos con metodologías ágiles donde tú eres parte del proceso en cada sprint. Siempre sabrás en qué estamos trabajando.',
-      icon: '💬',
-      color: 'teal'
-    },
-    {
-      number: '03',
-      title: 'Código Limpio y Documentado',
-      description: 'Escribimos código pensando en el futuro. Documentación clara, arquitectura escalable y buenas prácticas que facilitan el mantenimiento y las futuras mejoras.',
-      icon: '📝',
-      color: 'emerald'
-    },
-    {
-      number: '04',
-      title: 'Soporte Post-Entrega',
-      description: 'No desaparecemos cuando el proyecto termina. Ofrecemos soporte continuo, correcciones y optimizaciones para que tu producto siga funcionando perfectamente.',
-      icon: '🛠️',
-      color: 'teal'
-    },
-    {
-      number: '05',
-      title: 'Orientado a Resultados',
-      description: 'Nos importan los resultados reales: usuarios satisfechos, procesos optimizados, negocios que crecen. No solo escribimos código, resolvemos problemas.',
-      icon: '📈',
-      color: 'emerald'
-    },
-    {
-      number: '06',
-      title: 'Precios Justos y Claros',
-      description: 'Cotizaciones transparentes sin costos ocultos. Trabajamos con presupuestos realistas y entregamos lo prometido. Tu inversión es respetada.',
-      icon: '💰',
-      color: 'teal'
-    }
-  ]
+  const icons = ['🎯', '💬', '📝', '🛠️', '📈', '💰']
+
+  const reasons = t('whyUs.reasons', { returnObjects: true }) as Array<{
+    title: string
+    description: string
+  }>
 
   return (
-    <section id="porque-prismcode" className="py-20 relative overflow-hidden ">
+    <section id="porque-prismcode" className="py-20 relative overflow-hidden bg-gray-900/30">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div 
@@ -71,13 +35,13 @@ function WhyUs() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-white">¿Por qué </span>
+              <span className="text-white">{t('whyUs.title')} </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                PrismCode?
+                {t('whyUs.titleHighlight')}
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Más que un proveedor de servicios, somos tu aliado tecnológico para el éxito
+              {t('whyUs.subtitle')}
             </p>
           </div>
         </ScrollReveal>
@@ -97,12 +61,12 @@ function WhyUs() {
               >
                 {/* Number badge */}
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-emerald-500 text-black rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">
-                  {reason.number}
+                  {String(index + 1).padStart(2, '0')}
                 </div>
 
                 {/* Icon */}
                 <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {reason.icon}
+                  {icons[index]}
                 </div>
 
                 {/* Title */}
@@ -134,9 +98,11 @@ function WhyUs() {
                   className="w-full p-6 flex items-center justify-between text-left"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="text-3xl">{reason.icon}</div>
+                    <div className="text-3xl">{icons[index]}</div>
                     <div>
-                      <div className="text-xs text-emerald-400 font-bold mb-1">{reason.number}</div>
+                      <div className="text-xs text-emerald-400 font-bold mb-1">
+                        {String(index + 1).padStart(2, '0')}
+                      </div>
                       <h3 className="text-lg font-bold text-white">{reason.title}</h3>
                     </div>
                   </div>
@@ -172,31 +138,31 @@ function WhyUs() {
           ))}
         </div>
 
-        {/* CTA Section
+        {/* CTA Section */}
         <ScrollReveal delay={0.4}>
           <div className="mt-16 text-center bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-2xl p-12 border border-emerald-500/30">
             <h3 className="text-3xl font-bold text-white mb-4">
-              ¿Listo para comenzar tu proyecto?
+              {t('whyUs.cta.title')}
             </h3>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Conversemos sobre tu idea y cómo podemos ayudarte a hacerla realidad
+              {t('whyUs.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="#contacto"
                 className="inline-block bg-emerald-500 text-black px-8 py-4 rounded-xl font-bold hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/30 hover:scale-105"
               >
-                Iniciar Conversación
+                {t('whyUs.cta.button1')}
               </a>
               <a 
                 href="#proyectos"
                 className="inline-block border-2 border-emerald-500 text-emerald-400 px-8 py-4 rounded-xl font-bold hover:bg-emerald-500/10 transition-all"
               >
-                Ver Portafolio
+                {t('whyUs.cta.button2')}
               </a>
             </div>
           </div>
-        </ScrollReveal> */}
+        </ScrollReveal>
 
       </div>
     </section>

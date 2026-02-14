@@ -37,7 +37,121 @@ const resources = {
           title: 'Backend & Bases de Datos',
           description: 'Arquitecturas robustas y APIs RESTful. Diseño y optimización de bases de datos SQL y NoSQL para máximo rendimiento.'
         }
+      }, about: {
+        title: '¿Quiénes',
+        titleHighlight: 'Somos?',
+        intro: 'es un estudio de desarrollo de software enfocado en crear soluciones digitales personalizadas. No nos limitamos a tecnologías específicas -',
+        introHighlight: 'nos adaptamos a lo que tu proyecto necesita',
+        approach: {
+          title: 'Enfoque de trabajo',
+          p1: 'Cada proyecto es único y merece un enfoque personalizado. Trabajamos con',
+          p1Highlight: 'metodologías ágiles',
+          p1End: ', entregas incrementales y comunicación constante para garantizar que el resultado final supere tus expectativas.',
+          p2Start: 'Desde',
+          p2End: '- si tu proyecto lo necesita, lo aprendemos y lo implementamos.'
+        },
+        stats: {
+          years: 'Años de experiencia',
+          projects: 'Proyectos completados',
+          satisfaction: 'Satisfacción'
+        },
+        valuesTitle: 'Nuestros Valores',
+        values: {
+          results: {
+            title: 'Enfoque en Resultados',
+            description: 'No importa la tecnología, lo importante es entregar soluciones que funcionen y agreguen valor a tu negocio.'
+          },
+          adaptability: {
+            title: 'Adaptabilidad',
+            description: 'Me adapto a las necesidades específicas de cada proyecto, usando las herramientas que mejor se ajusten al contexto.'
+          },
+          innovation: {
+            title: 'Innovación Constante',
+            description: 'Siempre aprendiendo nuevas tecnologías y metodologías para ofrecer las mejores soluciones del mercado.'
+          },
+          communication: {
+            title: 'Comunicación Clara',
+            description: 'Trabajo codo a codo con mis clientes, manteniendo comunicación constante y transparente durante todo el proyecto.'
+          }
+        },
+        badge: 'Hecho en Costa Rica'
       },
+
+      whyUs: {
+        title: '¿Por qué',
+        titleHighlight: 'PrismCode?',
+        subtitle: 'Más que un proveedor de servicios, somos tu aliado tecnológico para el éxito',
+        reasons: [
+          {
+            title: 'Sin Límites Tecnológicos',
+            description: 'No estamos casados con un stack específico. Si tu proyecto necesita una tecnología en particular, la aprendemos y la implementamos. Tu visión define las herramientas, no al revés.'
+          },
+          {
+            title: 'Comunicación Transparente',
+            description: 'Actualizaciones constantes, sin sorpresas. Trabajamos con metodologías ágiles donde tú eres parte del proceso en cada sprint. Siempre sabrás en qué estamos trabajando.'
+          },
+          {
+            title: 'Código Limpio y Documentado',
+            description: 'Escribimos código pensando en el futuro. Documentación clara, arquitectura escalable y buenas prácticas que facilitan el mantenimiento y las futuras mejoras.'
+          },
+          {
+            title: 'Soporte Post-Entrega',
+            description: 'No desaparecemos cuando el proyecto termina. Ofrecemos soporte continuo, correcciones y optimizaciones para que tu producto siga funcionando perfectamente.'
+          },
+          {
+            title: 'Orientado a Resultados',
+            description: 'Nos importan los resultados reales: usuarios satisfechos, procesos optimizados, negocios que crecen. No solo escribimos código, resolvemos problemas.'
+          },
+          {
+            title: 'Precios Justos y Claros',
+            description: 'Cotizaciones transparentes sin costos ocultos. Trabajamos con presupuestos realistas y entregamos lo prometido. Tu inversión es respetada.'
+          }
+        ],
+        cta: {
+          title: '¿Listo para comenzar tu proyecto?',
+          subtitle: 'Conversemos sobre tu idea y cómo podemos ayudarte a hacerla realidad',
+          button1: 'Iniciar Conversación',
+          button2: 'Ver Portafolio'
+        }
+      },
+
+      process: {
+        title: 'Nuestro',
+        titleHighlight: 'Proceso',
+        subtitle: 'De la idea a la realidad en 5 pasos claros y organizados',
+        steps: [
+          {
+            title: 'Descubrimiento',
+            description: 'Conversamos sobre tu proyecto, objetivos y necesidades. Definimos alcance, tecnologías y cronograma.',
+            duration: '1-2 días'
+          },
+          {
+            title: 'Planificación',
+            description: 'Creamos wireframes, arquitectura técnica y plan de sprints. Definimos entregables y milestones.',
+            duration: '3-5 días'
+          },
+          {
+            title: 'Desarrollo',
+            description: 'Codificamos en sprints de 2 semanas con entregas incrementales. Acceso a ambiente de pruebas en tiempo real.',
+            duration: '4-12 semanas'
+          },
+          {
+            title: 'Testing & QA',
+            description: 'Pruebas exhaustivas de funcionalidad, rendimiento y seguridad. Correcciones y optimizaciones.',
+            duration: '1-2 semanas'
+          },
+          {
+            title: 'Deploy & Soporte',
+            description: 'Lanzamiento a producción, monitoreo y 30 días de soporte incluido. Documentación completa entregada.',
+            duration: 'Continuo'
+          }
+        ],
+        cta: {
+          question: '¿Listo para comenzar?',
+          button: 'Iniciar Proyecto'
+        }
+      },
+
       contact: {
         title: '¿Hablamos',
         titleHighlight: '?',
@@ -97,6 +211,119 @@ const resources = {
         backend: {
           title: 'Backend & Databases',
           description: 'Robust architectures and RESTful APIs. Design and optimization of SQL and NoSQL databases for maximum performance.'
+        }
+      }, about: {
+        title: 'Who',
+        titleHighlight: 'Are We?',
+        intro: 'is a software development studio focused on creating custom digital solutions. We are not limited to specific technologies -',
+        introHighlight: 'we adapt to what your project needs',
+        approach: {
+          title: 'Work approach',
+          p1: 'Each project is unique and deserves a personalized approach. We work with',
+          p1Highlight: 'agile methodologies',
+          p1End: ', incremental deliveries and constant communication to ensure the final result exceeds your expectations.',
+          p2Start: 'From',
+          p2End: '- if your project needs it, we learn it and implement it.'
+        },
+        stats: {
+          years: 'Years of experience',
+          projects: 'Completed projects',
+          satisfaction: 'Satisfaction'
+        },
+        valuesTitle: 'Our Values',
+        values: {
+          results: {
+            title: 'Results Focused',
+            description: "Technology doesn't matter, what matters is delivering solutions that work and add value to your business."
+          },
+          adaptability: {
+            title: 'Adaptability',
+            description: 'I adapt to the specific needs of each project, using the tools that best fit the context.'
+          },
+          innovation: {
+            title: 'Constant Innovation',
+            description: 'Always learning new technologies and methodologies to offer the best market solutions.'
+          },
+          communication: {
+            title: 'Clear Communication',
+            description: 'I work side by side with my clients, maintaining constant and transparent communication throughout the project.'
+          }
+        },
+        badge: 'Made in Costa Rica'
+      },
+
+      whyUs: {
+        title: 'Why',
+        titleHighlight: 'PrismCode?',
+        subtitle: 'More than a service provider, we are your technology partner for success',
+        reasons: [
+          {
+            title: 'No Technology Limits',
+            description: "We're not married to a specific stack. If your project needs a particular technology, we learn it and implement it. Your vision defines the tools, not the other way around."
+          },
+          {
+            title: 'Transparent Communication',
+            description: 'Constant updates, no surprises. We work with agile methodologies where you are part of the process in each sprint. You will always know what we are working on.'
+          },
+          {
+            title: 'Clean and Documented Code',
+            description: 'We write code thinking about the future. Clear documentation, scalable architecture and good practices that facilitate maintenance and future improvements.'
+          },
+          {
+            title: 'Post-Delivery Support',
+            description: "We don't disappear when the project ends. We offer ongoing support, corrections and optimizations so your product continues to work perfectly."
+          },
+          {
+            title: 'Results Oriented',
+            description: "We care about real results: satisfied users, optimized processes, growing businesses. We don't just write code, we solve problems."
+          },
+          {
+            title: 'Fair and Clear Pricing',
+            description: 'Transparent quotes without hidden costs. We work with realistic budgets and deliver what is promised. Your investment is respected.'
+          }
+        ],
+        cta: {
+          title: 'Ready to start your project?',
+          subtitle: "Let's talk about your idea and how we can help you make it a reality",
+          button1: 'Start Conversation',
+          button2: 'View Portfolio'
+        }
+      },
+
+      process: {
+        title: 'Our',
+        titleHighlight: 'Process',
+        subtitle: 'From idea to reality in 5 clear and organized steps',
+        steps: [
+          {
+            title: 'Discovery',
+            description: 'We discuss your project, objectives and needs. We define scope, technologies and timeline.',
+            duration: '1-2 days'
+          },
+          {
+            title: 'Planning',
+            description: 'We create wireframes, technical architecture and sprint plan. We define deliverables and milestones.',
+            duration: '3-5 days'
+          },
+          {
+            title: 'Development',
+            description: 'We code in 2-week sprints with incremental deliveries. Access to testing environment in real time.',
+            duration: '4-12 weeks'
+          },
+          {
+            title: 'Testing & QA',
+            description: 'Comprehensive functionality, performance and security testing. Corrections and optimizations.',
+            duration: '1-2 weeks'
+          },
+          {
+            title: 'Deploy & Support',
+            description: 'Production launch, monitoring and 30 days of included support. Complete documentation delivered.',
+            duration: 'Continuous'
+          }
+        ],
+        cta: {
+          question: 'Ready to get started?',
+          button: 'Start Project'
         }
       },
       contact: {

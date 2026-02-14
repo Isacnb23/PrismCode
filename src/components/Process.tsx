@@ -1,47 +1,20 @@
 import { ScrollReveal } from './ScrollReveal'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 function Process() {
-  const steps = [
-    {
-      number: '01',
-      title: 'Descubrimiento',
-      description: 'Conversamos sobre tu proyecto, objetivos y necesidades. Definimos alcance, tecnologías y cronograma.',
-      icon: '🔍',
-      duration: '1-2 días'
-    },
-    {
-      number: '02',
-      title: 'Planificación',
-      description: 'Creamos wireframes, arquitectura técnica y plan de sprints. Definimos entregables y milestones.',
-      icon: '📋',
-      duration: '3-5 días'
-    },
-    {
-      number: '03',
-      title: 'Desarrollo',
-      description: 'Codificamos en sprints de 2 semanas con entregas incrementales. Acceso a ambiente de pruebas en tiempo real.',
-      icon: '⚙️',
-      duration: '4-12 semanas'
-    },
-    {
-      number: '04',
-      title: 'Testing & QA',
-      description: 'Pruebas exhaustivas de funcionalidad, rendimiento y seguridad. Correcciones y optimizaciones.',
-      icon: '🧪',
-      duration: '1-2 semanas'
-    },
-    {
-      number: '05',
-      title: 'Deploy & Soporte',
-      description: 'Lanzamiento a producción, monitoreo y 30 días de soporte incluido. Documentación completa entregada.',
-      icon: '🚀',
-      duration: 'Continuo'
-    }
-  ]
+  const { t } = useTranslation()
+
+  const icons = ['🔍', '📋', '⚙️', '🧪', '🚀']
+
+  const steps = t('process.steps', { returnObjects: true }) as Array<{
+    title: string
+    description: string
+    duration: string
+  }>
 
   return (
-    <section id="proceso" className="py-20 relative overflow-hidden ">
+    <section id="proceso" className="py-20 relative overflow-hidden bg-gray-900/30">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-20">
         <div 
@@ -61,13 +34,13 @@ function Process() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-white">Nuestro </span>
+              <span className="text-white">{t('process.title')} </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                Proceso
+                {t('process.titleHighlight')}
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              De la idea a la realidad en 5 pasos claros y organizados
+              {t('process.subtitle')}
             </p>
           </div>
         </ScrollReveal>
@@ -95,10 +68,12 @@ function Process() {
                     className="flex-1 bg-black/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 hover:border-emerald-500/50 transition-all"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="text-5xl">{step.icon}</div>
+                      <div className="text-5xl">{icons[index]}</div>
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
-                          <span className="text-sm font-bold text-emerald-400">{step.number}</span>
+                          <span className="text-sm font-bold text-emerald-400">
+                            {String(index + 1).padStart(2, '0')}
+                          </span>
                           <h3 className="text-2xl font-bold text-white">{step.title}</h3>
                         </div>
                         <p className="text-gray-400 leading-relaxed mb-3">
@@ -129,17 +104,17 @@ function Process() {
         </div>
 
         {/* CTA */}
-        {/* <ScrollReveal delay={0.6}>
+        <ScrollReveal delay={0.6}>
           <div className="text-center mt-16">
-            <p className="text-gray-400 mb-6">¿Listo para comenzar?</p>
+            <p className="text-gray-400 mb-6">{t('process.cta.question')}</p>
             <a 
               href="#contacto"
               className="inline-block bg-emerald-500 text-black px-8 py-4 rounded-xl font-bold hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/30 hover:scale-105"
             >
-              Iniciar Proyecto
+              {t('process.cta.button')}
             </a>
           </div>
-        </ScrollReveal> */}
+        </ScrollReveal>
 
       </div>
     </section>

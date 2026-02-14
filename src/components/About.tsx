@@ -1,27 +1,30 @@
 import { ScrollReveal } from './ScrollReveal'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 function About() {
+  const { t } = useTranslation()
+
   const values = [
     {
       icon: '🎯',
-      title: 'Enfoque en Resultados',
-      description: 'No importa la tecnología, lo importante es entregar soluciones que funcionen y agreguen valor a tu negocio.'
+      title: t('about.values.results.title'),
+      description: t('about.values.results.description')
     },
     {
       icon: '🚀',
-      title: 'Adaptabilidad',
-      description: 'Me adapto a las necesidades específicas de cada proyecto, usando las herramientas que mejor se ajusten al contexto.'
+      title: t('about.values.adaptability.title'),
+      description: t('about.values.adaptability.description')
     },
     {
       icon: '💡',
-      title: 'Innovación Constante',
-      description: 'Siempre aprendiendo nuevas tecnologías y metodologías para ofrecer las mejores soluciones del mercado.'
+      title: t('about.values.innovation.title'),
+      description: t('about.values.innovation.description')
     },
     {
       icon: '🤝',
-      title: 'Comunicación Clara',
-      description: 'Trabajo codo a codo con mis clientes, manteniendo comunicación constante y transparente durante todo el proyecto.'
+      title: t('about.values.communication.title'),
+      description: t('about.values.communication.description')
     }
   ]
 
@@ -46,15 +49,14 @@ function About() {
         <ScrollReveal>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-white">¿Quiénes </span>
+              <span className="text-white">{t('about.title')} </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                Somos?
+                {t('about.titleHighlight')}
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              <span className="text-white font-semibold">PrismCode</span> es un estudio de desarrollo de software 
-              enfocado en crear soluciones digitales personalizadas. No nos limitamos a tecnologías específicas - 
-              <span className="text-emerald-400"> nos adaptamos a lo que tu proyecto necesita</span>.
+              <span className="text-white font-semibold">PrismCode</span> {t('about.intro')}
+              <span className="text-emerald-400"> {t('about.introHighlight')}</span>.
             </p>
           </div>
         </ScrollReveal>
@@ -66,35 +68,35 @@ function About() {
           <ScrollReveal direction="left">
             <div className="space-y-6">
               <h3 className="text-3xl font-bold text-white mb-4">
-                Enfoque de trabajo
+                {t('about.approach.title')}
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Cada proyecto es único y merece un enfoque personalizado. Trabajamos con 
-                <span className="text-emerald-400 font-semibold"> metodologías ágiles</span>, 
-                entregas incrementales y comunicación constante para garantizar que el resultado 
-                final supere tus expectativas.
+                {t('about.approach.p1')}
+                <span className="text-emerald-400 font-semibold"> {t('about.approach.p1Highlight')}</span>
+                {t('about.approach.p1End')}
               </p>
               <p className="text-gray-400 leading-relaxed">
-                Desde <span className="text-white font-semibold">aplicaciones web full-stack</span> hasta 
+                {t('about.approach.p2Start')}
+                <span className="text-white font-semibold"> aplicaciones web full-stack</span> hasta 
                 <span className="text-white font-semibold"> apps móviles multiplataforma</span>, 
                 pasando por <span className="text-white font-semibold">APIs robustas</span> y 
-                <span className="text-white font-semibold"> arquitecturas escalables</span> - 
-                si tu proyecto lo necesita, lo aprendemos y lo implementamos.
+                <span className="text-white font-semibold"> arquitecturas escalables</span>
+                {t('about.approach.p2End')}
               </p>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-6">
                 <div>
                   <div className="text-3xl font-bold text-emerald-400 mb-1">3+</div>
-                  <div className="text-sm text-gray-400">Años de experiencia</div>
+                  <div className="text-sm text-gray-400">{t('about.stats.years')}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-emerald-400 mb-1">10+</div>
-                  <div className="text-sm text-gray-400">Proyectos completados</div>
+                  <div className="text-sm text-gray-400">{t('about.stats.projects')}</div>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-emerald-400 mb-1">100%</div>
-                  <div className="text-sm text-gray-400">Satisfacción</div>
+                  <div className="text-sm text-gray-400">{t('about.stats.satisfaction')}</div>
                 </div>
               </div>
             </div>
@@ -119,7 +121,7 @@ function About() {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-4 -right-4 bg-emerald-500 text-black px-6 py-3 rounded-xl font-bold shadow-xl"
               >
-                🇨🇷 Hecho en Costa Rica
+                🇨🇷 {t('about.badge')}
               </motion.div>
             </div>
           </ScrollReveal>
@@ -129,7 +131,7 @@ function About() {
         {/* Values Grid */}
         <ScrollReveal>
           <h3 className="text-3xl font-bold text-center text-white mb-12">
-            Nuestros Valores
+            {t('about.valuesTitle')}
           </h3>
         </ScrollReveal>
 
