@@ -1,34 +1,35 @@
 import { useState, useEffect } from 'react'
-import logo from '../assets/logo.png'
+// import logo from '../assets/logo.png'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { useTranslation } from 'react-i18next'
 import { motion, AnimatePresence } from 'framer-motion'
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const logo = '/Logo.png'
   const { t, i18n } = useTranslation()
-  const [,setShowBadge] = useState(true)
+  const [, setShowBadge] = useState(true)
   useEffect(() => {
-  let lastScrollY = window.scrollY
+    let lastScrollY = window.scrollY
 
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
 
-    // Si baja, se oculta
-    if (currentScrollY > lastScrollY && currentScrollY > 80) {
-      setShowBadge(false)
+      // Si baja, se oculta
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        setShowBadge(false)
+      }
+      // Si sube, aparece
+      else if (currentScrollY < lastScrollY) {
+        setShowBadge(true)
+      }
+
+      lastScrollY = currentScrollY
     }
-    // Si sube, aparece
-    else if (currentScrollY < lastScrollY) {
-      setShowBadge(true)
-    }
 
-    lastScrollY = currentScrollY
-  }
-
-  window.addEventListener("scroll", handleScroll, { passive: true })
-  return () => window.removeEventListener("scroll", handleScroll)
-}, [])
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
@@ -150,7 +151,7 @@ function Navbar() {
               className="flex items-center gap-3 group"
             >
               <img
-                src={logo}
+                src="/Logo.png" 
                 alt="PrismCode Logo"
                 className="w-10 h-10 transition-transform group-hover:rotate-180 duration-700"
               />
@@ -212,19 +213,16 @@ function Navbar() {
             >
               <div className="relative w-6 h-5">
                 <span
-                  className={`absolute left-0 w-full h-0.5 bg-white transform transition-all duration-300 ${
-                    isMenuOpen ? 'top-2 rotate-45' : 'top-0 rotate-0'
-                  }`}
+                  className={`absolute left-0 w-full h-0.5 bg-white transform transition-all duration-300 ${isMenuOpen ? 'top-2 rotate-45' : 'top-0 rotate-0'
+                    }`}
                 />
                 <span
-                  className={`absolute left-0 top-2 w-full h-0.5 bg-white transition-all duration-300 ${
-                    isMenuOpen ? 'opacity-0' : 'opacity-100'
-                  }`}
+                  className={`absolute left-0 top-2 w-full h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'
+                    }`}
                 />
                 <span
-                  className={`absolute left-0 w-full h-0.5 bg-white transform transition-all duration-300 ${
-                    isMenuOpen ? 'top-2 -rotate-45' : 'top-4 rotate-0'
-                  }`}
+                  className={`absolute left-0 w-full h-0.5 bg-white transform transition-all duration-300 ${isMenuOpen ? 'top-2 -rotate-45' : 'top-4 rotate-0'
+                    }`}
                 />
               </div>
             </button>
@@ -234,18 +232,16 @@ function Navbar() {
 
       {/* MENÚ MOBILE */}
       <div
-        className={`fixed inset-0 bg-black/100 backdrop-blur-lg z-40 md:hidden transition-all duration-300 ${
-          isMenuOpen
+        className={`fixed inset-0 bg-black/100 backdrop-blur-lg z-40 md:hidden transition-all duration-300 ${isMenuOpen
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
-        }`}
+          }`}
       >
         <div
-          className={`flex flex-col items-center justify-center h-full gap-8 transform transition-all duration-500 ${
-            isMenuOpen
+          className={`flex flex-col items-center justify-center h-full gap-8 transform transition-all duration-500 ${isMenuOpen
               ? 'translate-y-0 opacity-100'
               : '-translate-y-10 opacity-0'
-          }`}
+            }`}
         >
           {/* Language Switcher Mobile */}
           <div className="pt-4 pb-4">
@@ -286,7 +282,7 @@ function Navbar() {
                 {t('nav.contact')}
               </a>
 
-              
+
             </motion.div>
           </AnimatePresence>
         </div>
