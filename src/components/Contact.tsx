@@ -1,8 +1,7 @@
 import { ScrollReveal } from './ScrollReveal'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, type FormEvent } from 'react'
+import { useState, type FormEvent, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
-
 import { User, Mail, Building2, MessageSquareText, Send } from 'lucide-react'
 
 function Contact() {
@@ -17,28 +16,33 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
+  // ✅ Inicializar EmailJS
+  useEffect(() => {
+    emailjs.init('tM-P_y48f5R7eGrDK')
+  }, [])
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     try {
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_zxph0tb',
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_vqwbh3e',
+        'service_zxph0tb',
+        'template_vqwbh3e',
         {
           from_name: formData.name,
           from_email: formData.email,
           company: formData.company || 'No especificada',
           message: formData.message,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'tM-P_y48f5R7eGrDK'
+        'tM-P_y48f5R7eGrDK'
       )
 
       setSubmitStatus('success')
       setFormData({ name: '', email: '', company: '', message: '' })
       setTimeout(() => setSubmitStatus('idle'), 5000)
     } catch (error) {
-      console.error('Error:', error)
+      console.error('Error al enviar:', error)
       setSubmitStatus('error')
       setTimeout(() => setSubmitStatus('idle'), 5000)
     } finally {
@@ -53,7 +57,7 @@ function Contact() {
     })
   }
 
-  return (
+return (
     <section id="contacto" className="py-24 relative overflow-hidden bg-black">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-25">
