@@ -33,7 +33,7 @@ function About() {
   // CAROUSEL STATE
   // -----------------------------
   const [index, setIndex] = useState(0)
-  const [visibleCount, setVisibleCount] = useState(4)
+  const [, setVisibleCount] = useState(4)
 
   // Detecta el tamaño real de pantalla (responsive real)
   useEffect(() => {
