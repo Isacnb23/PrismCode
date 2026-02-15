@@ -1,7 +1,7 @@
 import { ScrollReveal } from './ScrollReveal'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function About() {
   const { t } = useTranslation()
