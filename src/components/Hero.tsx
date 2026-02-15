@@ -56,7 +56,7 @@ function Hero() {
           className="flex justify-center mb-8"
         >
           <img
-            src="/logo.png"  // ⬅️ Ruta directa
+            src="/Logo.png"  // ⬅️ Ruta directa
             alt="PrismCode Logo"
             className="w-32 h-32 drop-shadow-2xl"
           />
