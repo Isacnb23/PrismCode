@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t, i18n } = useTranslation()
-  const [showBadge, setShowBadge] = useState(true)
+  const [,setShowBadge] = useState(true)
   useEffect(() => {
   let lastScrollY = window.scrollY
 

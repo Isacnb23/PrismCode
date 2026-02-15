@@ -62,14 +62,14 @@ function About() {
   const next = () => setIndex((prev) => (prev + 1) % values.length)
   const prev = () => setIndex((prev) => (prev - 1 + values.length) % values.length)
 
-  // Valores visibles en pantalla (ventana)
-  const visibleValues = useMemo(() => {
-    const result = []
-    for (let i = 0; i < visibleCount; i++) {
-      result.push(values[(index + i) % values.length])
-    }
-    return result
-  }, [values, index, visibleCount])
+  // // Valores visibles en pantalla (ventana)
+  // const visibleValues = useMemo(() => {
+  //   const result = []
+  //   for (let i = 0; i < visibleCount; i++) {
+  //     result.push(values[(index + i) % values.length])
+  //   }
+  //   return result
+  // }, [values, index, visibleCount])
 
   return (
     <section id="nosotros" className="py-20 relative overflow-hidden">

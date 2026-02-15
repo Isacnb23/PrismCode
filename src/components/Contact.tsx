@@ -1,6 +1,6 @@
 import { ScrollReveal } from './ScrollReveal'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, FormEvent } from 'react'
+import { useState, type FormEvent } from 'react'
 import emailjs from '@emailjs/browser'
 
 import { User, Mail, Building2, MessageSquareText, Send } from 'lucide-react'
