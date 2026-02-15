@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const logo = '/Logo.png'
+  // const logo = '/Logo.png'
   const { t, i18n } = useTranslation()
   const [, setShowBadge] = useState(true)
   useEffect(() => {
