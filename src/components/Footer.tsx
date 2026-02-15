@@ -7,11 +7,11 @@ function Footer() {
   // Función de smooth scroll integrada
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const href = e.currentTarget.getAttribute('href')
-    
+
     if (href && href.startsWith('#')) {
       e.preventDefault()
       const element = document.querySelector(href)
-      
+
       if (element) {
         const navbarHeight = 100
         const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
@@ -54,8 +54,8 @@ function Footer() {
         style={{
           width: '1100px',
           height: '500px',
-          background: 'radial-gradient(ellipse 800px 400px at 20% 80%, rgba(16,185,129,0.3), transparent)',
-          transform: 'translateX(-15%) translateY(10%) rotate(-10deg)',
+          background: 'radial-gradient(ellipse 800px 400px at 20% 120%, rgba(16,185,129,0.3), transparent)',
+          transform: 'translateX(-5%) translateY(10%) rotate(-10deg)',
         }}
       />
 
@@ -64,7 +64,7 @@ function Footer() {
         style={{
           width: '950px',
           height: '650px',
-          background: 'radial-gradient(ellipse 700px 500px at 70% 30%, rgba(5,150,105,0.3), transparent)',
+          background: 'radial-gradient(ellipse 700px 500px at 70% 100%, rgba(5,150,105,0.3), transparent)',
           transform: 'translateX(15%) translateY(-5%) rotate(15deg)',
         }}
       />
@@ -74,7 +74,7 @@ function Footer() {
         style={{
           width: '900px',
           height: '500px',
-          background: 'radial-gradient(ellipse 750px 350px at 80% 70%, rgba(20,184,166,0.3), transparent)',
+          background: 'radial-gradient(ellipse 750px 350px at 100% 100%, rgba(20,184,166,0.3), transparent)',
           transform: 'translateX(20%) translateY(12%) rotate(5deg)',
         }}
       />
@@ -82,7 +82,7 @@ function Footer() {
       {/* Contenido */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-16 mb-16">
-          
+
           {/* Brand */}
           <ScrollReveal direction="up">
             <div className="lg:max-w-sm">
@@ -110,7 +110,7 @@ function Footer() {
 
           {/* Columnas de enlaces */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-10 sm:gap-12 lg:gap-16">
-            
+
             {/* Enlaces */}
             <ScrollReveal direction="up" delay={0.1}>
               <nav className="min-w-[140px]">
@@ -119,7 +119,7 @@ function Footer() {
                 </h3>
                 <ul className="space-y-3">
                   {navigationLinks.map((link, index) => (
-                    <motion.li 
+                    <motion.li
                       key={index}
                       whileHover={{ x: 5 }}
                       transition={{ duration: 0.2 }}
@@ -146,7 +146,7 @@ function Footer() {
                 </h3>
                 <ul className="space-y-3">
                   {socialNavLinks.map((link, index) => (
-                    <motion.li 
+                    <motion.li
                       key={index}
                       whileHover={{ x: 5 }}
                       transition={{ duration: 0.2 }}
@@ -203,7 +203,7 @@ function Footer() {
 
         {/* Separador animado */}
         <ScrollReveal>
-          <motion.div 
+          <motion.div
             className="flex justify-start mb-8"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}

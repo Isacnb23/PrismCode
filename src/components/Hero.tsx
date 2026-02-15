@@ -7,25 +7,46 @@ function Hero() {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      
+
+      {/* Ondas decorativas */}
+      <div
+        className="absolute top-0 left-0 opacity-20"
+        style={{
+          width: '1100px',
+          height: '500px',
+          background:
+            'radial-gradient(ellipse 800px 400px at 20% 20%, rgba(16,185,129,0.3), transparent)',
+          transform: 'translateX(-15%) translateY(-10%) rotate(-10deg)',
+        }}
+      />
+
+      <div
+        className="absolute top-0 right-0 opacity-15"
+        style={{
+          width: '950px',
+          height: '650px',
+          background:
+            'radial-gradient(ellipse 700px 500px at 100% -50%, rgba(5,150,105,0.3), transparent)',
+          transform: 'translateX(15%) translateY(-5%) rotate(15deg)',
+        }}
+      />
+
+      <div
+        className="absolute top-0 right-0 opacity-20"
+        style={{
+          width: '1100px',
+          height: '500px',
+          background:
+            'radial-gradient(ellipse 800px 400px at 90% 10%, rgba(20,184,166,0.3), transparent)',
+          transform: 'translateX(15%) translateY(-10%) rotate(10deg)',
+        }}
+      />
+
+
       {/* Contenido */}
       <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-        
-        {/* Badge disponible */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-2 mb-8"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span className="text-emerald-400 font-medium text-sm">
-            {t('hero.available')}  {/* ⬅️ CAMBIAR */}
-          </span>
-        </motion.div>
+
+
 
         {/* Logo animado */}
         <motion.div
@@ -34,9 +55,9 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex justify-center mb-8"
         >
-          <img 
-            src={logo} 
-            alt="PrismCode Logo" 
+          <img
+            src={logo}
+            alt="PrismCode Logo"
             className="w-32 h-32 drop-shadow-2xl"
           />
         </motion.div>
@@ -49,7 +70,7 @@ function Hero() {
           className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight"
         >
           <span className="text-white">{t('hero.title1')}</span><br />  {/* ⬅️ CAMBIAR */}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-1000">
             {t('hero.title2')}  {/* ⬅️ CAMBIAR */}
           </span>
         </motion.h1>
@@ -65,21 +86,21 @@ function Hero() {
         </motion.p>
 
         {/* Tech stack */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
           {['React', 'Node.js', 'Flutter', 'MongoDB', 'ASP.NET'].map((tech, index) => (
-            <span 
+            <span
               key={index}
               className="px-4 py-2 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg text-gray-300 text-sm"
             >
               {tech}
             </span>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* CTAs */}
         <motion.div
@@ -88,16 +109,11 @@ function Hero() {
           transition={{ duration: 0.6, delay: 1.2 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <a 
-            href="#proyectos"
-            className="bg-emerald-500 text-black px-8 py-4 rounded-xl font-bold hover:bg-emerald-400 transition-all shadow-lg shadow-emerald-500/30 hover:scale-105"
-          >
-            {t('hero.cta1')}  {/* ⬅️ CAMBIAR */}
-          </a>
           
-          <a 
+
+          <a
             href="#contacto"
-            className="border-2 border-emerald-500 text-emerald-400 px-8 py-4 rounded-xl font-bold hover:bg-emerald-500/10 transition-all"
+            className="border-2 border-emerald-500 text-green-400 px-8 py-4 rounded-xl font-bold hover:bg-emerald-500/10 transition-all"
           >
             {t('hero.cta2')}  {/* ⬅️ CAMBIAR */}
           </a>
@@ -108,7 +124,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="pt-8 bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

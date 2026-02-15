@@ -11,35 +11,47 @@ const resources = {
         projects: 'Proyectos',
         about: 'Nosotros',
         contact: 'Contacto',
-        cta: 'Hablemos'
+        cta: 'Hablemos',
+        proceso: 'Nuestro Proceso'
       },
       hero: {
         available: 'Disponible para proyectos',
-        title1: 'Construyendo el',
-        title2: 'futuro digital',
-        subtitle: 'Desarrollo web full-stack y aplicaciones móviles de alto rendimiento.',
+        title1: 'Del concepto',
+        title2: 'al lanzamiento',
+        subtitle: 'Desarrollo web y móvil con enfoque en rendimiento, seguridad y escalabilidad.',
         cta1: 'Ver Proyectos',
-        cta2: 'Contactar',
+        cta2: 'Trabajemos juntos',
         scroll: 'Scroll'
       },
-      services: {
-        title: 'Servicios',
-        subtitle: 'Soluciones tecnológicas completas para llevar tu negocio al siguiente nivel',
-        web: {
-          title: 'Desarrollo Web Full-Stack',
-          description: 'Aplicaciones web modernas y escalables con React, Angular y Node.js. Interfaces responsivas y experiencias de usuario excepcionales.'
+      "services": {
+        "title": "Servicios",
+        "subtitle": "Soluciones diseñadas para ayudar a su negocio a crecer con software moderno, escalable y de alta calidad.",
+
+        "web": {
+          "title": "Desarrollo Web",
+          "description": "Creo sitios rápidos, modernos y optimizados para convertir visitas en clientes.",
+          "point1": "Landing pages y sitios corporativos",
+          "point2": "Optimización de velocidad y SEO",
+          "point3": "Integración con APIs y servicios"
         },
-        mobile: {
-          title: 'Aplicaciones Móviles',
-          description: 'Apps nativas y multiplataforma con Flutter. Rendimiento óptimo en iOS y Android con una única base de código.'
+        "mobile": {
+          "title": "Apps Móviles",
+          "description": "Desarrollo apps fluidas y funcionales para Android y iOS, listas para crecer.",
+          "point1": "Flutter / FlutterFlow",
+          "point2": "Diseño UX moderno",
+          "point3": "Publicación y soporte"
         },
-        backend: {
-          title: 'Backend & Bases de Datos',
-          description: 'Arquitecturas robustas y APIs RESTful. Diseño y optimización de bases de datos SQL y NoSQL para máximo rendimiento.'
+        "backend": {
+          "title": "Backend y APIs",
+          "description": "Construyo sistemas sólidos, seguros y escalables para tu negocio.",
+          "point1": "APIs REST seguras",
+          "point2": "Bases de datos relacionales y NoSQL",
+          "point3": "Arquitectura escalable"
         }
-      }, about: {
-        title: '¿Quiénes',
-        titleHighlight: 'Somos?',
+      }
+      , about: {
+        title: 'Quiénes',
+        titleHighlight: 'Somos',
         intro: 'es un estudio de desarrollo de software enfocado en crear soluciones digitales personalizadas. No nos limitamos a tecnologías específicas -',
         introHighlight: 'nos adaptamos a lo que tu proyecto necesita',
         approach: {
@@ -48,7 +60,14 @@ const resources = {
           p1Highlight: 'metodologías ágiles',
           p1End: ', entregas incrementales y comunicación constante para garantizar que el resultado final supere tus expectativas.',
           p2Start: 'Desde',
-          p2End: '- si tu proyecto lo necesita, lo aprendemos y lo implementamos.'
+          p2End: '- si tu proyecto lo necesita, lo aprendemos y lo implementamos.',
+          t1: 'hasta',
+          t2: 'pasan por',
+          t3: 'y',
+          text1: 'aplicaciones web full-stack',
+          text2: 'apps móviles multiplataforma',
+          text3: 'APIs robustas',
+          text4: 'arquitecturas escalables'
         },
         stats: {
           years: 'Años de experiencia',
@@ -186,33 +205,44 @@ const resources = {
         projects: 'Projects',
         about: 'About',
         contact: 'Contact',
-        cta: "Let's Talk"
+        cta: "Let's Talk",
+        proceso: "Our Process"
       },
       hero: {
         available: 'Available for projects',
-        title1: 'Building the',
-        title2: 'digital future',
-        subtitle: 'Full-stack web development and high-performance mobile applications.',
+        title1: 'From concept',
+        title2: 'to launch',
+        subtitle: 'Web and mobile development with a focus on performance, security, and scalability.',
         cta1: 'View Projects',
-        cta2: 'Contact',
+        cta2: 'lets work together',
         scroll: 'Scroll'
       },
-      services: {
-        title: 'Services',
-        subtitle: 'Complete technology solutions to take your business to the next level',
-        web: {
-          title: 'Full-Stack Web Development',
-          description: 'Modern and scalable web applications with React, Angular, and Node.js. Responsive interfaces and exceptional user experiences.'
+      "services": {
+        "title": "Services",
+        "subtitle": "Solutions designed to help your business grow with modern, scalable and high-quality software.",
+        "web": {
+          "title": "Web Development",
+          "description": "I build fast, modern websites optimized to turn visitors into real clients.",
+          "point1": "Landing pages and business websites",
+          "point2": "Speed and SEO optimization",
+          "point3": "API and service integrations"
         },
-        mobile: {
-          title: 'Mobile Applications',
-          description: 'Native and cross-platform apps with Flutter. Optimal performance on iOS and Android with a single codebase.'
+        "mobile": {
+          "title": "Mobile Apps",
+          "description": "I develop smooth and functional mobile apps for Android and iOS, ready to scale.",
+          "point1": "Flutter / FlutterFlow development",
+          "point2": "Modern UX-focused design",
+          "point3": "Publishing and ongoing support"
         },
-        backend: {
-          title: 'Backend & Databases',
-          description: 'Robust architectures and RESTful APIs. Design and optimization of SQL and NoSQL databases for maximum performance.'
+        "backend": {
+          "title": "Backend & APIs",
+          "description": "I create secure, scalable and reliable systems to power your product or business.",
+          "point1": "Secure REST API development",
+          "point2": "Relational and NoSQL databases",
+          "point3": "Scalable architecture"
         }
-      }, about: {
+      }
+      , about: {
         title: 'Who',
         titleHighlight: 'Are We?',
         intro: 'is a software development studio focused on creating custom digital solutions. We are not limited to specific technologies -',
@@ -223,7 +253,14 @@ const resources = {
           p1Highlight: 'agile methodologies',
           p1End: ', incremental deliveries and constant communication to ensure the final result exceeds your expectations.',
           p2Start: 'From',
-          p2End: '- if your project needs it, we learn it and implement it.'
+          p2End: '- if your project needs it, we learn it and implement it.',
+          t1: 'to',
+          t2: 'Including',
+          t3: 'and',
+          text1: 'full-stack web applications',
+          text2: 'cross-platform mobile apps',
+          text3: 'robust APIs',
+          text4: 'arquitecturas escalabscalable architecturesles'
         },
         stats: {
           years: 'Years of experience',
