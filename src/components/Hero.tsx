@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import logo from '../assets/logo.png'
+// import logo from '../assets/logo.png'
 import { useTranslation } from 'react-i18next'  // ⬅️ AGREGAR
 
 function Hero() {
@@ -56,7 +56,7 @@ function Hero() {
           className="flex justify-center mb-8"
         >
           <img
-            src={logo}
+            src="/logo.png"  // ⬅️ Ruta directa
             alt="PrismCode Logo"
             className="w-32 h-32 drop-shadow-2xl"
           />
@@ -85,7 +85,7 @@ function Hero() {
           {t('hero.subtitle')}  {/* ⬅️ CAMBIAR */}
         </motion.p>
 
-      
+
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -93,7 +93,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 1.2 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          
+
 
           <a
             href="#contacto"
