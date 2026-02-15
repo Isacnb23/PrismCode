@@ -113,7 +113,7 @@ function Hero() {
 
           <a
             href="#contacto"
-            className="border-2 border-emerald-500 text-green-400 px-8 py-4 rounded-xl font-bold hover:bg-emerald-500/10 transition-all"
+            className="border-2 border-green-500 text-green-400 px-8 py-4 rounded-xl font-bold hover:bg-green-500/10 transition-all"
           >
             {t('hero.cta2')}  {/* ⬅️ CAMBIAR */}
           </a>
@@ -124,7 +124,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.5 }}
-          className="pt-8 bottom-8 left-1/2 transform -translate-x-1/2"
+          className="pt-8 bottom-8 "
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}

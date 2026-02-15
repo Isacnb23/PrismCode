@@ -95,7 +95,7 @@ function About() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               <span className="text-white">{t('about.title')} </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-teal-00">
+              <span className="text-transparent bg-clip-text text-white">
                 {t('about.titleHighlight')}
               </span>
             </h2>
@@ -211,9 +211,9 @@ function About() {
         {/* Values Spotlight Carousel */}
       
         <ScrollReveal>
-          <h3 className="text-3xl font-bold text-center text-white mb-12">
+          <h2 className="text-white text-center text-4xl md:text-5xl font-bold mb-4">
             {t('about.valuesTitle')}
-          </h3>
+          </h2>
         </ScrollReveal>
           <ScrollReveal direction="up" delay={0.1}>
         <div className="relative max-w-6xl mx-auto px-6">

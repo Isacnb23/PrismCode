@@ -265,7 +265,7 @@ function Navbar() {
               <a
                 href="#servicios"
                 onClick={handleNavClick}
-                className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
+                className="text-3xl font-bold text-white hover:text-green-700 transition-colors"
               >
                 {t('nav.services')}
               </a>
@@ -273,7 +273,7 @@ function Navbar() {
               <a
                 href="#proceso"
                 onClick={handleNavClick}
-                className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
+                className="text-3xl font-bold text-white hover:text-green-700 transition-colors"
               >
                 {t('nav.proceso')}
               </a>
@@ -281,7 +281,7 @@ function Navbar() {
               <a
                 href="#contacto"
                 onClick={handleNavClick}
-                className="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
+                className="text-3xl font-bold text-white hover:text-green-700 transition-colors"
               >
                 {t('nav.contact')}
               </a>

@@ -48,11 +48,9 @@ function Process() {
         {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-white">{t('process.title')} </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-teal-900">
-                {t('process.titleHighlight')}
-              </span>
+            <h2 className="text-white text-center text-4xl md:text-5xl font-bold mb-4">
+              {t('process.title')} {t('process.titleHighlight')}
+             
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               {t('process.subtitle')}
