@@ -16,9 +16,9 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  // Inicializar EmailJS
+  // ✅ Inicializar EmailJS con Public Key correcta
   useEffect(() => {
-    emailjs.init('tM-P_y48f5R7eGrDK')
+    emailjs.init('zGsv-DzsicOqMItdV')
   }, [])
 
   const handleSubmit = async (e: FormEvent) => {
@@ -27,15 +27,15 @@ function Contact() {
 
     try {
       await emailjs.send(
-        'service_v3w8u2t',      // ✅ Service ID correcto
-        'template_7k1ksze',     // ✅ Template ID correcto
+        'service_v3w8u2t',      // ✅ Service ID
+        'template_7k1ksze',     // ✅ Template ID
         {
           from_name: formData.name,
           from_email: formData.email,
           company: formData.company || 'No especificada',
           message: formData.message,
         },
-        'tM-P_y48f5R7eGrDK'     // ✅ Public Key
+        'zGsv-DzsicOqMItdV'     // ✅ Public Key correcta
       )
 
       setSubmitStatus('success')
