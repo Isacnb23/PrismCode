@@ -16,7 +16,7 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  // ✅ Inicializar EmailJS
+  // Inicializar EmailJS
   useEffect(() => {
     emailjs.init('tM-P_y48f5R7eGrDK')
   }, [])
@@ -27,15 +27,15 @@ function Contact() {
 
     try {
       await emailjs.send(
-        'service_zxph0tb',
-        'template_vqwbh3e',
+        'service_v3w8u2t',      // ✅ Service ID correcto
+        'template_7k1ksze',     // ✅ Template ID correcto
         {
           from_name: formData.name,
           from_email: formData.email,
           company: formData.company || 'No especificada',
           message: formData.message,
         },
-        'tM-P_y48f5R7eGrDK'
+        'tM-P_y48f5R7eGrDK'     // ✅ Public Key
       )
 
       setSubmitStatus('success')
@@ -57,7 +57,7 @@ function Contact() {
     })
   }
 
-return (
+  return (
     <section id="contacto" className="py-24 relative overflow-hidden bg-black">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-25">
@@ -86,8 +86,7 @@ return (
         <ScrollReveal>
           <div className="text-center mb-14">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-white">¿Hablamos?
-              </span>
+              <span className="text-white">¿Hablamos?</span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Cuéntame sobre tu proyecto y trabajemos juntos para hacerlo realidad
@@ -103,7 +102,7 @@ return (
               transition={{ duration: 0.25 }}
               className="relative rounded-3xl p-[1px] overflow-hidden"
             >
-              {/* Border gradient (más elegante y menos loco) */}
+              {/* Border gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 via-transparent to-teal-500/20" />
 
               {/* Card */}
@@ -217,7 +216,6 @@ return (
                       )}
                     </AnimatePresence>
                   </div>
-
 
                   {/* Submit */}
                   <motion.button
