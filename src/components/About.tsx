@@ -2,32 +2,35 @@ import { ScrollReveal } from './ScrollReveal'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useState } from 'react'
+import { Target, Rocket, Lightbulb, Handshake } from "lucide-react"
+
 
 function About() {
   const { t } = useTranslation()
 
   const values = [
     {
-      icon: '🎯',
+      icon: Target,
       title: t('about.values.results.title'),
       description: t('about.values.results.description')
     },
     {
-      icon: '🚀',
+      icon: Rocket,
       title: t('about.values.adaptability.title'),
       description: t('about.values.adaptability.description')
     },
     {
-      icon: '💡',
+      icon: Lightbulb,
       title: t('about.values.innovation.title'),
       description: t('about.values.innovation.description')
     },
     {
-      icon: '🤝',
+      icon: Handshake,
       title: t('about.values.communication.title'),
       description: t('about.values.communication.description')
     }
   ]
+
 
   // -----------------------------
   // CAROUSEL STATE
@@ -209,103 +212,122 @@ function About() {
         </div>
 
         {/* Values Spotlight Carousel */}
-      
+
         <ScrollReveal>
           <h2 className="text-white text-center text-4xl md:text-5xl font-bold mb-4">
             {t('about.valuesTitle')}
           </h2>
         </ScrollReveal>
-          <ScrollReveal direction="up" delay={0.1}>
-        <div className="relative max-w-6xl mx-auto px-6">
-          
+        <ScrollReveal direction="up" delay={0.1}>
+          <div className="relative max-w-6xl mx-auto px-6">
 
-          {/* Botón Izquierda */}
-          <button
-            onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/60 border border-gray-700 flex items-center justify-center text-white hover:border-green-500/60 transition"
-          >
-            ←
-          </button>
 
-          {/* Botón Derecha */}
-          <button
-            onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/60 border border-gray-700 flex items-center justify-center text-white hover:border-green-500/60 transition"
-          >
-            →
-          </button>
+            {/* Botón Izquierda */}
+            <button
+              onClick={prev}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/60 border border-gray-700 flex items-center justify-center text-white hover:border-green-500/60 transition"
+            >
+              ←
+            </button>
 
-          {/* Carrusel */}
-          <div className="relative h-[320px] flex items-center justify-center overflow-hidden">
-            <AnimatePresence mode="popLayout">
-              {values.map((value, i) => {
-                // distancia relativa al index actual
-                let offset = i - index
+            {/* Botón Derecha */}
+            <button
+              onClick={next}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/60 border border-gray-700 flex items-center justify-center text-white hover:border-green-500/60 transition"
+            >
+              →
+            </button>
 
-                // wrap infinito
-                if (offset > values.length / 2) offset -= values.length
-                if (offset < -values.length / 2) offset += values.length
+            {/* Carrusel */}
+            <div className="relative h-[400px] flex items-center justify-center overflow-hidden">
+              <AnimatePresence mode="popLayout">
+                {values.map((value, i) => {
+                  // distancia relativa al index actual
+                  let offset = i - index
 
-                const isActive = offset === 0
+                  // wrap infinito
+                  if (offset > values.length / 2) offset -= values.length
+                  if (offset < -values.length / 2) offset += values.length
 
-                return (
-                  <motion.div
-                    key={value.title}
-                    className="absolute"
-                    animate={{
-                      x: offset * 340,
-                      scale: isActive ? 1 : 0.85,
-                      opacity: isActive ? 1 : 0.35,
-                      filter: isActive ? "blur(0px)" : "blur(3px)"
-                    }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 250,
-                      damping: 22
-                    }}
-                    style={{
-                      zIndex: isActive ? 20 : 10
-                    }}
-                  >
+                  const isActive = offset === 0
+
+                  return (
                     <motion.div
-                      whileHover={isActive ? { y: -6 } : {}}
-                      className={`w-[320px] md:w-[360px] h-[240px] rounded-2xl p-7   border transition-all backdrop-blur-md shadow-[0_0_40px_rgba(0,0,0,0.35)] 
-                        ${isActive? "bg-gradient-to-b from-gray-900/40 to-black/40 border-green-500/40"
-                          : "bg-gray-900/30 border-gray-800"
-                        }`}
+                      key={value.title}
+                      className="absolute"
+                      animate={{
+                        x: offset * 340,
+                        scale: isActive ? 1 : 0.85,
+                        opacity: isActive ? 1 : 0.35,
+                        filter: isActive ? "blur(0px)" : "blur(3px)"
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 250,
+                        damping: 22
+                      }}
+                      style={{
+                        zIndex: isActive ? 20 : 10
+                      }}
                     >
-                      <div className="text-center text-3xl md:text-5xl mb-5">{value.icon}</div>
+                      <motion.div
+                        whileHover={isActive ? { y: -6 } : {}}
+                        className={`mb-8w-[320px] md:w-[360px] h-[240px] rounded-2xl p-7   border transition-all backdrop-blur-md shadow-[0_0_40px_rgba(0,0,0,0.35)] 
+                        ${isActive ? "bg-gradient-to-b from-gray-900/40 to-black/40 border-green-500/40"
+                            : "bg-gray-900/30 border-gray-800"
+                          }`}
+                      >
+                        <div className="flex justify-center mb-5">
+                          <motion.div
+                            animate={isActive ? { scale: 1 } : { scale: 0.92 }}
+                            transition={{ duration: 0.25 }}
+                            className={`relative w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center border backdrop-blur-md ${isActive ? "bg-green-500/10 border-emerald-400/40" 
+                                : "bg-white/5 border-white/10"
+                              }`}
+                          >
+                            {/* Glow */}
+                            <div
+                              className={`absolute inset-0 rounded-2xl blur-xl opacity-0 transition-opacity duration-300 ${isActive ? "opacity-100 bg-green-500/20" : ""}`}
+                            />
 
-                      <h4 className="text-xl font-bold text-white mb-2">
-                        {value.title}
-                      </h4>
+                            {/* Icon */}
+                            <value.icon
+                              className={`relative z-10 w-8 h-8 md:w-10 md:h-10 ${isActive ? "text-green-300" : "text-gray-400"}`}
+                            />
+                          </motion.div>
+                        </div>
 
-                      <p className="text-sm text-gray-400 leading-relaxed">
-                        {value.description}
-                      </p>
-                      
+
+                        <h4 className="text-xl font-bold text-white mb-2">
+                          {value.title}
+                        </h4>
+
+                        <p className="text-sm text-gray-400 leading-relaxed mb-8">
+                          {value.description}
+                        </p>
+
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
-                )
-              })}
-            </AnimatePresence>
-          </div>
+                  )
+                })}
+              </AnimatePresence>
+            </div>
 
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-6">
-            {values.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setIndex(i)}
-                className={`h-2.5 rounded-full transition-all ${i === index ? "w-8 bg-emerald-400" : "w-2.5 bg-gray-700"
-                  }`}
-              />
-            ))}
+            {/* Dots */}
+            <div className="flex justify-center gap-2 mt-6">
+              {values.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setIndex(i)}
+                  className={`h-2.5 rounded-full transition-all ${i === index ? "w-8 bg-emerald-400" : "w-2.5 bg-gray-700"
+                    }`}
+                />
+              ))}
+            </div>
+
           </div>
-          
-        </div>
         </ScrollReveal>
-        
+
 
       </div>
     </section>

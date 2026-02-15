@@ -1,6 +1,9 @@
 import { ScrollReveal } from './ScrollReveal'
 import { motion } from 'framer-motion'
 
+// ICONOS PRO
+import { Instagram, Linkedin, Github, MessageCircle } from 'lucide-react'
+
 function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -25,11 +28,28 @@ function Footer() {
     }
   }
 
+  // ✅ SOLO REDES QUE QUERÉS
   const socialLinks = [
-    { icon: '📷', label: 'Instagram', href: '#' },
-    { icon: '𝕏', label: 'Twitter', href: '#' },
-    { icon: '💼', label: 'LinkedIn', href: '#' },
-    { icon: '🐙', label: 'GitHub', href: '#' }
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      label: 'Instagram',
+      href: 'https://instagram.com/'
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      label: 'LinkedIn',
+      href: 'https://linkedin.com/'
+    },
+    {
+      icon: <Github className="w-5 h-5" />,
+      label: 'GitHub',
+      href: 'https://github.com/'
+    },
+    {
+      icon: <MessageCircle className="w-5 h-5" />,
+      label: 'WhatsApp',
+      href: 'https://wa.me/50600000000'
+    }
   ]
 
   const navigationLinks = [
@@ -40,22 +60,23 @@ function Footer() {
   ]
 
   const socialNavLinks = [
-    { name: 'Instagram', href: '#' },
-    { name: 'Twitter (X)', href: '#' },
-    { name: 'LinkedIn', href: '#' },
-    { name: 'GitHub', href: '#' }
+    { name: 'Instagram', href: 'https://instagram.com/' },
+    { name: 'LinkedIn', href: 'https://linkedin.com/' },
+    { name: 'GitHub', href: 'https://github.com/Isacnb23' },
+    { name: 'WhatsApp', href: 'https://wa.me/50684309207' }
   ]
 
   return (
-    <footer className="relative bg-black overflow-hidden pt-20 pb-8">
+    <footer className="relative bg-black overflow-hidden pt-20 pb-10">
       {/* Ondas decorativas */}
       <div
         className="absolute bottom-0 left-0 opacity-20"
         style={{
           width: '1100px',
           height: '500px',
-          background: 'radial-gradient(ellipse 800px 400px at 20% 120%, rgba(16,185,129,0.3), transparent)',
-          transform: 'translateX(-5%) translateY(10%) rotate(-10deg)',
+          background:
+            'radial-gradient(ellipse 800px 400px at 20% 120%, rgba(16,185,129,0.3), transparent)',
+          transform: 'translateX(-5%) translateY(10%) rotate(-10deg)'
         }}
       />
 
@@ -64,8 +85,9 @@ function Footer() {
         style={{
           width: '950px',
           height: '650px',
-          background: 'radial-gradient(ellipse 700px 500px at 70% 100%, rgba(5,150,105,0.3), transparent)',
-          transform: 'translateX(15%) translateY(-5%) rotate(15deg)',
+          background:
+            'radial-gradient(ellipse 700px 500px at 70% 100%, rgba(5,150,105,0.3), transparent)',
+          transform: 'translateX(15%) translateY(-5%) rotate(15deg)'
         }}
       />
 
@@ -74,22 +96,49 @@ function Footer() {
         style={{
           width: '900px',
           height: '500px',
-          background: 'radial-gradient(ellipse 750px 350px at 100% 100%, rgba(20,184,166,0.3), transparent)',
-          transform: 'translateX(20%) translateY(12%) rotate(5deg)',
+          background:
+            'radial-gradient(ellipse 750px 350px at 100% 100%, rgba(20,184,166,0.3), transparent)',
+          transform: 'translateX(20%) translateY(12%) rotate(5deg)'
         }}
       />
 
       {/* Contenido */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-16 mb-16">
+        <div className="flex flex-col lg:flex-row lg:justify-between gap-12 lg:gap-16 mb-14">
 
           {/* Brand */}
           <ScrollReveal direction="up">
             <div className="lg:max-w-sm">
-              <div className="text-3xl font-bold mb-4">
-                <span className="text-white">Prism</span>
-                <span className="text-emerald-400">Code</span>
-              </div>
+              {/* LOGO con brillo */}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.25 }}
+                className="inline-block relative"
+              >
+                {/* Glow */}
+                <div
+                  className="
+                    absolute -inset-2 rounded-2xl
+                    bg-gradient-to-r from-emerald-500/0 via-emerald-500/25 to-teal-500/0
+                    blur-xl opacity-0
+                    transition-opacity duration-500
+                    group-hover:opacity-100
+                  "
+                />
+
+                <div className="group relative">
+                  <div className="text-3xl font-bold mb-3">
+                    <span className="text-white">Prism</span>
+                    <span className="text-green-700">Code</span>
+                  </div>
+
+                  {/* Glow real al hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div className="absolute -top-2 left-0 w-28 h-10 bg-green-500/20 blur-2xl rounded-full" />
+                    <div className="absolute -top-2 left-16 w-20 h-10 bg-teal-500/15 blur-2xl rounded-full" />
+                  </div>
+                </div>
+              </motion.div>
 
               <p className="text-base text-gray-400 mb-4 leading-relaxed max-w-xs">
                 Desarrollo de software personalizado con tecnologías modernas.
@@ -191,54 +240,101 @@ function Footer() {
                   </li>
                   <li>
                     <span className="text-sm text-gray-500">
-                      PymeCo POS — Próximamente
+                      PymeCo - Modelo
                     </span>
                   </li>
                 </ul>
               </nav>
             </ScrollReveal>
-
           </div>
         </div>
 
-        {/* Separador animado */}
+        {/* Separador */}
         <ScrollReveal>
           <motion.div
-            className="flex justify-start mb-8"
+            className="flex justify-start mb-6"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
           </motion.div>
         </ScrollReveal>
 
         {/* Bottom */}
         <ScrollReveal direction="up" delay={0.2}>
-          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
-            <p className="text-base text-gray-400">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <p className="text-sm md:text-base text-gray-400">
               © {currentYear} PrismCode. Todos los derechos reservados.
             </p>
 
-            {/* Iconos sociales animados */}
-            <div className="flex gap-4">
+            {/* Iconos sociales PRO + TOOLTIP */}
+            <div className="flex gap-3">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={index}
                   href={social.href}
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white hover:bg-emerald-500/20 transition-all border border-gray-800 hover:border-emerald-500/50 text-xl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.12, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="
+                    group relative
+                    flex h-11 w-11 items-center justify-center
+                    rounded-2xl
+                    bg-black/40
+                    border border-emerald-500/10
+                    text-emerald-200/90
+                    hover:text-white
+                    hover:border-emerald-400/40
+                    hover:bg-emerald-500/10
+                    transition-all
+                    backdrop-blur-md
+                  "
                   aria-label={social.label}
                 >
+                  {/* Tooltip */}
+                  <span
+                    className="
+                      pointer-events-none
+                      absolute -top-11 left-1/2 -translate-x-1/2
+                      whitespace-nowrap
+                      rounded-xl
+                      bg-black/80
+                      border border-emerald-500/20
+                      px-3 py-1.5
+                      text-xs font-medium text-white
+                      opacity-0 scale-95
+                      transition-all duration-200
+                      group-hover:opacity-100 group-hover:scale-100
+                      backdrop-blur-md
+                    "
+                  >
+                    {social.label}
+
+                    {/* Flechita tooltip */}
+                    <span
+                      className="
+                        absolute left-1/2 top-full -translate-x-1/2
+                        w-2 h-2 rotate-45
+                        bg-black/80
+                        border-r border-b border-emerald-500/20
+                      "
+                    />
+                  </span>
+
+                  {/* Glow del icono */}
+                  <span className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <span className="absolute inset-0 bg-emerald-500/10 blur-xl rounded-2xl" />
+                  </span>
+
                   {social.icon}
                 </motion.a>
               ))}
             </div>
           </div>
         </ScrollReveal>
-
       </div>
     </footer>
   )
