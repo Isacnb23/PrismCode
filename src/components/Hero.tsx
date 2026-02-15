@@ -85,23 +85,7 @@ function Hero() {
           {t('hero.subtitle')}  {/* ⬅️ CAMBIAR */}
         </motion.p>
 
-        {/* Tech stack */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
-          {['React', 'Node.js', 'Flutter', 'MongoDB', 'ASP.NET'].map((tech, index) => (
-            <span
-              key={index}
-              className="px-4 py-2 bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg text-gray-300 text-sm"
-            >
-              {tech}
-            </span>
-          ))}
-        </motion.div> */}
-
+      
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
